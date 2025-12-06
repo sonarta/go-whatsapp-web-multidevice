@@ -10,4 +10,4 @@ services:
       dockerfile: ./Dockerfile
     restart: "on-failure"
     ports:
-      - "3000:3000"
+      - "3081:3000"
