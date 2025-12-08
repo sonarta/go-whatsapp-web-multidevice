@@ -147,8 +147,9 @@ func InitWaCLI(ctx context.Context, storeContainer, keysStoreContainer *sqlstore
 	}
 
 	// Configure device properties
+	osName := fmt.Sprintf("%s %s", config.AppOs, config.AppVersion)
 	store.DeviceProps.PlatformType = &config.AppPlatform
-	store.DeviceProps.Os = &config.AppOs
+	store.DeviceProps.Os = &osName
 
 	// Keep references for global state update after client creation
 	primaryDB := storeContainer
