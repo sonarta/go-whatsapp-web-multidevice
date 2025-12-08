@@ -9,5 +9,11 @@ services:
       context: .
       dockerfile: ./Dockerfile
     restart: "on-failure"
+    environment:
+      - APP_PORT=${APP_PORT}
+      - APP_DEBUG=${APP_DEBUG}
+      - APP_OS=${APP_OS}
+      - APP_BASIC_AUTH=${WA_USER}:${WA_PASSWORD}
+      - WHATSAPP_ACCOUNT_VALIDATION=${APP_ACCOUNT_VALIDATION}
     ports:
-      - "3081:3000"
+      - "${APP_PORT}:${APP_PORT}"
